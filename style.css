@@ -396,23 +396,28 @@ img {
 /* ✅ Mobile friendly fixes (final) */
 /* -------------------------------------- */
 @media (max-width: 768px) {
-  /* Header logo smaller */
+  /* Logo smaller */
   .site-logo img {
     height: 40px;
     width: auto;
   }
 
-  /* Navigation - stack vertically */
-  .nav-container nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  /* Navigation - stack vertically + fix parent container */
+  .nav-container {
+    width: 100%;
   }
 
-  header nav a {
-    font-size: 1.2rem;
-    padding: 0.5rem 0;
-    min-width: unset;
+  .nav-container nav {
+    display: block;  /* 🚨 Important: change from flex to block on mobile */
+    width: 100%;
+  }
+
+  .nav-container nav a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #ddd;
   }
 
   /* About section stack */
@@ -435,4 +440,5 @@ img {
     width: 100%;
   }
 }
+
 
