@@ -35,7 +35,7 @@
   </section>
 
   <section id="about" class="page-section">
-  <h2>About Me</h2>
+  <h2>About me</h2>
 
   <div class="about-container">
 
@@ -189,33 +189,35 @@
   <footer>
     <p>&copy; 2025 Mohammad Javad Haghighatnia</p>
   </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('a[href^="#"]');
+  const sections = document.querySelectorAll('.page-section');
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const links = document.querySelectorAll('header nav a');
-      const sections = document.querySelectorAll('.page-section');
-
-      function showSection(id) {
-        sections.forEach(section => {
-          section.classList.remove('active');
-        });
-        const activeSection = document.querySelector(id);
-        if (activeSection) {
-          activeSection.classList.add('active');
-        }
-      }
-
-      links.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = this.getAttribute('href');
-          showSection(target);
-        });
-      });
-
-      showSection('#home');
+  function showSection(id) {
+    sections.forEach(section => {
+      section.classList.remove('active');
     });
-  </script>
+    const activeSection = document.querySelector(id);
+    if (activeSection) {
+      activeSection.classList.add('active');
+    }
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const target = this.getAttribute('href');
+      if (target.startsWith('#')) {
+        e.preventDefault();
+        showSection(target);
+      }
+    });
+  });
+
+  showSection('#home');
+});
+</script>
+
 
 </body>
 </html>
