@@ -383,3 +383,12 @@ img {
   -webkit-user-select: none;
   user-select: none;
 }
+
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
+}
+
