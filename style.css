@@ -392,3 +392,47 @@ img {
   display: block;
 }
 
+/* -------------------------------------- */
+/* ✅ Mobile friendly fixes (final) */
+/* -------------------------------------- */
+@media (max-width: 768px) {
+  /* Header logo smaller */
+  .site-logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  /* Navigation - stack vertically */
+  .nav-container nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  header nav a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    min-width: unset;
+  }
+
+  /* About section stack */
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-photo,
+  .about-text {
+    width: 100%;
+  }
+
+  /* Contact section adjust */
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-note,
+  .contact-list {
+    width: 100%;
+  }
+}
+
