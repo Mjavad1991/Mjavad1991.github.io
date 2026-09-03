@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="Evolutionary biologist working on macroevolutionary modeling, phylogenetics, and plant &amp; vertebrate diversification." />
   <meta name="twitter:image" content="https://mjavad1991.github.io/assets/homeme.jpg" />
 
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body oncontextmenu="return false">
   
@@ -311,7 +311,11 @@ document.addEventListener('DOMContentLoaded', function () {
   if (header) {
     let ticking = false;
     function updateHeaderScroll() {
-      header.classList.toggle('scrolled', window.scrollY > 40);
+      if (window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else if (window.scrollY < 20) {
+        header.classList.remove('scrolled');
+      }
       ticking = false;
     }
     window.addEventListener('scroll', function () {
