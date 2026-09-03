@@ -72,6 +72,7 @@
 /* Reset and Base */
 html {
   scroll-behavior: smooth;
+  overflow-anchor: none;
 }
 
 body {
@@ -92,7 +93,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.35s ease;
+  transition: background-color 0.3s ease, box-shadow 0.18s ease;
 }
 
 header.scrolled {
@@ -104,7 +105,7 @@ header.scrolled {
   align-items: center;
   justify-content: flex-start;
   padding: 1rem 2rem;
-  transition: padding 0.35s ease;
+  transition: padding 0.18s ease;
 }
 
 .site-logo {
@@ -112,14 +113,14 @@ header.scrolled {
   align-items: center;
   flex-shrink: 0;
   margin-right: 3rem;
-  transition: margin 0.35s ease;
+  transition: margin 0.18s ease;
 }
 
 .site-logo img {
   height: 200px;
   width: auto;
   filter: var(--logo-filter);
-  transition: filter 0.3s ease, height 0.35s ease;
+  transition: filter 0.3s ease, height 0.18s ease;
 }
 
 .nav-container {
@@ -140,7 +141,7 @@ header.scrolled {
   font-size: 1.5rem;
   padding: 0.3rem 1rem;
   border-bottom: 2px solid transparent;
-  transition: font-size 0.35s ease, padding 0.35s ease, color 0.25s ease, border-bottom 0.25s ease;
+  transition: font-size 0.18s ease, padding 0.18s ease, color 0.25s ease, border-bottom 0.25s ease;
 }
 
 /* Shrinking header on scroll (desktop) */
