@@ -227,11 +227,21 @@ document.addEventListener('DOMContentLoaded', function () {
       if (target.startsWith('#')) {
         e.preventDefault();
         showSection(target);
+        history.pushState(null, '', target);
       }
     });
   });
 
-  showSection('#home');
+  const validIds = Array.from(sections).map(section => '#' + section.id);
+
+  function showSectionFromHash() {
+    const hash = window.location.hash;
+    showSection(validIds.includes(hash) ? hash : '#home');
+  }
+
+  window.addEventListener('hashchange', showSectionFromHash);
+
+  showSectionFromHash();
 
   const yearEl = document.getElementById('current-year');
   if (yearEl) {
