@@ -72,6 +72,7 @@
 /* Reset and Base */
 html {
   scroll-behavior: smooth;
+  overflow-anchor: none;
 }
 
 body {
